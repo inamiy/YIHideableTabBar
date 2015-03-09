@@ -71,9 +71,10 @@
     }
     else {
         // hide tabBar
+        __weak SecondViewController *weakSelf = self;
         [self.tabBarController setTabBarHidden:YES animated:YES delaysContentResizing:DELAYS_CONTENT_RESIZING completion:^{
             // show toolbar
-            [self.navigationController setToolbarHidden:NO animated:YES];
+            [weakSelf.navigationController setToolbarHidden:NO animated:YES];
         }];
     }
 }
