@@ -64,9 +64,11 @@
     }
     else {
         // hide tabBar
+        __weak FirstViewController *weakSelf = self;
+
         [self.tabBarController setTabBarHidden:YES animated:YES completion:^{
             // show toolbar
-            [self.navigationController setToolbarHidden:NO animated:YES];
+            [weakSelf.navigationController setToolbarHidden:NO animated:YES];
         }];
     }
 }
